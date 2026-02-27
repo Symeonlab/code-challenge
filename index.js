@@ -6,15 +6,16 @@
  * 3. Filter for specific country.
  * 4. Create customers in Stripe.
  */
-
+require('dotenv').config();
 const fs = require('fs');
 const Stripe = require('stripe');
 
 
 // Ref: https://docs.stripe.com/api/authentication
-const stripe = Stripe('sk_test_51MEuPXA69JWLHl3Jxw3gKWTtXJCOkzmvjDs5oJ45DZEHFzo5HLz5JfWkNvzU03eCyo0ojkiW2ot6WXA8udWEkh0300nAnoJmcj');
-const API_KEY = 'pk_7f8a9b2c4d6e1f3a5b8c9d0e2f4a6b7c';
-const URL = 'https://ops-challenge-f4e887b4ef3a.herokuapp.com/data';
+// Keys are now pulled from the environment, not hardcoded
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const API_KEY = process.env.HEROKU_API_KEY;
+const URL = process.env.DATA_URL;
 
 async function sync(targetCountry) {
   try {
