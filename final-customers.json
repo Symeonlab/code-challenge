@@ -1,1 +1,12 @@
-[{}]
+[
+  {
+    "email": "eavonb@delicious.com",
+    "stripe_id": "cus_U3artaR3SyR160",
+    "country": "ES"
+  },
+  {
+    "email": "laggiok@hhs.gov",
+    "stripe_id": "cus_U3arB2dmKWXlMr",
+    "country": "ES"
+  }
+]
